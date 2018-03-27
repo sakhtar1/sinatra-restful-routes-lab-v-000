@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
 
 
   get '/recipes' do
+    Raise params.inspect
     @recipes = Recipe.all
     erb :index
 
