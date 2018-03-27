@@ -1,3 +1,4 @@
+require 'pry'
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -6,9 +7,9 @@ class ApplicationController < Sinatra::Base
 
 
   get '/recipes' do
-    Raise params.inspect
     @recipes = Recipe.all
     erb :index
+    binding.pry
   end
 
   get '/recipes/new' do
